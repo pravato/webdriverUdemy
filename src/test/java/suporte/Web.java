@@ -19,7 +19,4 @@ public class Web {
         return navegador;
     }
 
-    //public static WebDriver createBrowserStack(){ necessário refazer esta parte com a conta
-
-    }
 }

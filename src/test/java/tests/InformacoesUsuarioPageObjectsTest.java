@@ -9,6 +9,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 import pages.LoginPage;
+import pages.MePage;
 import suporte.Web;
 import static org.junit.Assert.*;
 
@@ -19,6 +20,7 @@ public class InformacoesUsuarioPageObjectsTest {
 
     @Before
     public void setUp () {
+
         navegador = Web.createChrome();
     }
 
@@ -42,9 +44,34 @@ public class InformacoesUsuarioPageObjectsTest {
         assertEquals(mensagemEsperada, textoToast);
     }
 
+    @Test
+    public void testRemoverUmContato(){
+
+        new LoginPage(navegador)
+                .clicarSignIn()
+                .fazerLogin("julio0001","123456")
+                .clicarMe()
+                .clicarAbaMoreDataAboutYou()
+                .deletarContato();
+
+    }
+
+    @Test
+    public void testRemoverTodosOsContatos(){
+
+        new LoginPage(navegador)
+                .clicarSignIn()
+                .fazerLogin("julio0001","123456")
+                .clicarMe()
+                .clicarAbaMoreDataAboutYou()
+                .verificarSeExistemContatos();
+
+
+    }
+
     @After
     public void tearDown () {
-        navegador.quit();
+        //navegador.quit();
     }
 }
 
