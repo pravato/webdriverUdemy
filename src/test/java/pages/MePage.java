@@ -1,6 +1,5 @@
 package pages;
 
-import org.apache.commons.lang.ObjectUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -19,7 +18,7 @@ public class MePage extends BasePage {
         return this;
     }
 
-    public AddContactPage clicarBotaoAddMoreDataAboutYou (){
+    public AddContactPage clicarBotaoAddMoreDataAboutYou(){
         navegador.findElement(By.xpath("//*[@id=\"moredata\"]/div[2]/button")).click();
 
         return new AddContactPage (navegador);
@@ -47,7 +46,7 @@ public class MePage extends BasePage {
         return this;
     }
 
-    //Método Funcional para deletar o primeiro contato
+    //Método Funcional para sempre deletar o primeiro contato
     public MePage deletarContato(){
         clicarBotaoDeletar();
         confirmarJavascript();
@@ -56,6 +55,7 @@ public class MePage extends BasePage {
         return this;
     }
 
+    //Método para deletar todos os contatos, semore que a DIV estiver visível
     public MePage verificarSeExistemContatos(){
         boolean divContatos = navegador.findElement(By.xpath("//*[@id=\"moredata\"]/div[1]/ul")).isDisplayed();
         while (true){

@@ -106,28 +106,9 @@ public class InformacoesUsuarioTest {
         navegador.findElement(By.linkText("Logout")).click();
     }
 
-   // @Test
-    public void removerTodosOsContatos () {
-        //Fazer um FOR para buscar os 145 registros e deletá-los
-        for (int i=1; i<145; i++) {
-            navegador.findElement(By.xpath("//*[@id=\"moredata\"]/div[1]/ul/li[1]/a/i")).click();
-
-            //Confirmar a janela javascript
-            navegador.switchTo().alert().accept();
-
-            //Aguardar até 10 segundos para que a janela desapareça
-            WebElement mensagemPop = navegador.findElement(By.id("toast-container")); //Capturar o toast da mensagem
-            String mensagem = mensagemPop.getText(); //Atribuir o texto à variável
-            WebDriverWait aguardar = new WebDriverWait(navegador,10);
-            aguardar.until(ExpectedConditions.stalenessOf(mensagemPop)); //Irá aguardar até que o elemento 'mensagemPop' desapareça
-        }
-        //Clicar no link com o texto "logout" após finalizar o FOR
-        navegador.findElement(By.linkText("Logout")).click();
-    }
-
     @After
     public void tearDown(){
         //Fechar o navegador
-        //navegador.quit();
+        navegador.quit();
     }
 }

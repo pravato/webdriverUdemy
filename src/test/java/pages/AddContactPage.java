@@ -29,7 +29,7 @@ public class AddContactPage extends BasePage{
         return new MePage(navegador);
     }
 
-    public MePage adicionarContato (String tipo, String contato){
+    public MePage adicionarContato(String tipo, String contato){
         escolherTipoDeContato(tipo);
         digitarContato(contato);
         clicarSalvar();

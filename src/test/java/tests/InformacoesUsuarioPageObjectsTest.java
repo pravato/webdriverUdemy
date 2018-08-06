@@ -19,7 +19,7 @@ public class InformacoesUsuarioPageObjectsTest {
     private WebDriver navegador;
 
     @Before
-    public void setUp () {
+    public void setUp() {
 
         navegador = Web.createChrome();
     }
