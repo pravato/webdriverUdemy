@@ -65,13 +65,11 @@ public class InformacoesUsuarioPageObjectsTest {
                 .clicarMe()
                 .clicarAbaMoreDataAboutYou()
                 .verificarSeExistemContatos();
-
-
     }
 
     @After
     public void tearDown () {
-        //navegador.quit();
+        navegador.quit();
     }
 }
 

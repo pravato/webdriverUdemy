@@ -1,7 +1,11 @@
 package pages;
 
+import org.apache.commons.lang.ObjectUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class MePage extends BasePage {
 
@@ -34,24 +38,33 @@ public class MePage extends BasePage {
         return this;
     }
 
+    public MePage aguardarMensagem(){
+        WebElement mensagemPop = navegador.findElement(By.id("toast-container"));
+        String mensagem = mensagemPop.getText();
+        WebDriverWait aguardar = new WebDriverWait(navegador,10);
+        aguardar.until(ExpectedConditions.stalenessOf(mensagemPop));
+
+        return this;
+    }
+
     //Método Funcional para deletar o primeiro contato
     public MePage deletarContato(){
         clicarBotaoDeletar();
         confirmarJavascript();
+        aguardarMensagem();
 
         return this;
     }
 
     public MePage verificarSeExistemContatos(){
         boolean divContatos = navegador.findElement(By.xpath("//*[@id=\"moredata\"]/div[1]/ul")).isDisplayed();
-        while (divContatos) {
-                for (divContatos) {
-                    deletarContato();
-                }
-
+        while (true){
+            try{
+                deletarContato();
+            } catch (Exception e){
+                break;
+            }
         }
-
         return this;
-
     }
 }
