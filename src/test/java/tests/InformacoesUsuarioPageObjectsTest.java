@@ -9,7 +9,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 import pages.LoginPage;
-import pages.MePage;
 import suporte.Web;
 import static org.junit.Assert.*;
 
