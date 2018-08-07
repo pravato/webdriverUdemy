@@ -55,8 +55,8 @@ public class MePage extends BasePage {
         return this;
     }
 
-    //Método para deletar todos os contatos, semore que a DIV estiver visível
-    public MePage verificarSeExistemContatos(){
+    //Método para deletar todos os contatos, sempre que a DIV estiver visível
+    public MePage deletarTodosContatos(){
         boolean divContatos = navegador.findElement(By.xpath("//*[@id=\"moredata\"]/div[1]/ul")).isDisplayed();
         while (true){
             try{

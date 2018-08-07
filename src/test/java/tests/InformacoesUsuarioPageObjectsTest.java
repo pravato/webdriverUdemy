@@ -63,7 +63,7 @@ public class InformacoesUsuarioPageObjectsTest {
                 .fazerLogin("julio0001","123456")
                 .clicarMe()
                 .clicarAbaMoreDataAboutYou()
-                .verificarSeExistemContatos();
+                .deletarTodosContatos();
     }
 
     @After
