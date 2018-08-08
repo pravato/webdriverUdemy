@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class LoginFormPage extends BasePage{
-    public LoginFormPage(WebDriver navegador) {
+public LoginFormPage(WebDriver navegador) {
         super(navegador);
     }
 

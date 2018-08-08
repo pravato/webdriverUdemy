@@ -95,7 +95,7 @@ public class InformacoesUsuarioTest {
         String mensagem = mensagemPop.getText(); //Atribuir o texto à variável
         assertEquals("Rest in peace, dear phone!", mensagem); //Validar o conteúdo da mensagem vs. variável
 
-        String screenshotArquivo = "C:\\Users\\Mário\\print\\" + Generator.dataHoraParaArquivo() + test.getMethodName() + ".png";
+        String screenshotArquivo = "C:\\Users\\mpravato\\print\\" + Generator.dataHoraParaArquivo() + test.getMethodName() + ".png";
         Screenshot.tirar(navegador, screenshotArquivo);
 
         //Aguardar até 10 segundos para que a janela desapareça

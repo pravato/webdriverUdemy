@@ -5,9 +5,13 @@ import org.easetech.easytest.annotation.Param;
 import org.easetech.easytest.runner.DataDrivenTestRunner;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.TestName;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
+import pages.BasePage;
+import pages.HomePage;
 import pages.LoginPage;
 import suporte.Web;
 import static org.junit.Assert.*;
@@ -52,7 +56,6 @@ public class InformacoesUsuarioPageObjectsTest {
                 .clicarMe()
                 .clicarAbaMoreDataAboutYou()
                 .deletarContato();
-
     }
 
     @Test
@@ -64,6 +67,14 @@ public class InformacoesUsuarioPageObjectsTest {
                 .clicarMe()
                 .clicarAbaMoreDataAboutYou()
                 .deletarTodosContatos();
+    }
+
+    @Test
+    public void testAcessarRedesSociais(){
+
+        new HomePage(navegador)
+                .irParaHome()
+                .acessarRedesSociais();
     }
 
     @After
