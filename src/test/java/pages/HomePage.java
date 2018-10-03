@@ -4,8 +4,6 @@ import org.junit.Rule;
 import org.junit.rules.TestName;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import suporte.Generator;
-import suporte.Screenshot;
 
 public class HomePage extends BasePage {
     public HomePage(WebDriver navegador) {

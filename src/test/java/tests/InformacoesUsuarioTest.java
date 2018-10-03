@@ -32,7 +32,7 @@ public class InformacoesUsuarioTest {
 
     @Before //Executar antes do @Test
     public void setUp() {
-        navegador = Web.createChrome();
+        navegador = Web.createBrowser();
 
         //Clicar no link que possui o texto "Sign in"
         navegador.findElement(By.linkText("Sign in")).click();
